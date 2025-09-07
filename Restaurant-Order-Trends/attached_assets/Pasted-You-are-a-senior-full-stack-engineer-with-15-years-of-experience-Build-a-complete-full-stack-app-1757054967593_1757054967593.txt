@@ -1,0 +1,58 @@
+You are a senior full-stack engineer with 15+ years of experience. 
+Build a complete full-stack application called **Restaurant Order Trends Dashboard**.
+
+### Stack
+- Backend: Laravel (PHP) REST API.
+- Frontend: Next.js (React, TypeScript).
+- Database: SQLite (default, simple to run). Also include optional Docker Compose for MySQL + Redis setup.
+
+### Requirements
+**Backend (Laravel)**
+1. API endpoints:
+   - GET /restaurants → list/search/sort/paginate restaurants.
+   - POST /restaurants → add a new restaurant (name, location, cuisine).
+   - POST /orders → add a new sale/order (restaurant_id, amount, timestamp).
+   - GET /restaurants/{id}/analytics → return:
+     - daily orders count
+     - daily revenue
+     - average order value
+     - peak order hour per day
+     - supports filters: restaurant, date range, amount range, hour range
+   - GET /analytics/top-restaurants → return top 3 restaurants by revenue (with date range filter).
+2. Seed DB with provided mock data files (`orders.json`, `restaurants.json`) located in `backend/database/seeders/data/`.
+3. Use migrations + seeders for schema + mock data.
+
+**Frontend (Next.js)**
+1. Pages:
+   - Home → show restaurant list (with search/filter/pagination).
+   - Restaurant detail → show analytics dashboard.
+2. Features:
+   - Add restaurant (form).
+   - Add sale/order (form).
+   - Analytics dashboard with filters (restaurant selector, date range picker, amount range, hour range).
+   - Charts: daily orders, revenue, average order value, peak hour (line/bar/KPI).
+   - Top 3 restaurants summary panel.
+   - If a restaurant has **no sales**, still render empty charts for month/year (with “No data available” placeholders).
+3. Styling:
+   - Use **shadcn/ui** components for forms, tables, modals, buttons.
+   - Light, professional theme (white/soft grey backgrounds, consistent margins, padding, typography).
+   - Consistent icons (lucide-react).
+4. Show live updates on graphs when filters are applied.
+5. After adding a restaurant or sale, lists and analytics should refresh automatically.
+
+**Deployment / Running**
+- Instructions for running locally:
+  - Backend: `php artisan migrate --seed` then `php artisan serve`.
+  - Frontend: `npm install && npm run dev`.
+- Docker Compose option for backend (PHP + MySQL + Redis + Node).
+- README.md explaining setup for both backend and frontend.
+
+### Deliverables
+- Full backend code (migrations, models, controllers, routes, seeders).
+- Full frontend code (pages, components, API integration).
+- Docker Compose file.
+- README.md with setup instructions.
+- Example API calls for each endpoint.
+
+### Output Format
+Respond with the **entire project as a single structured codebase**, showing:
