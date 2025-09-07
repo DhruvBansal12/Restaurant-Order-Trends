@@ -1,66 +1,97 @@
 # Restaurant-Order-Trends
-Restaurant Order Trends Dashboard
-Overview
+A full-stack application for tracking and analyzing restaurant orders, revenue, and peak business hours.
 
-This project is a full-stack analytics dashboard designed for restaurants. It helps track and analyze order patterns, giving managers real-time insights into how their restaurants are performing. The dashboard makes it easy to monitor daily orders, revenue trends, busy hours, and compare performance across multiple locations.
+## Features
 
-It’s especially useful for restaurant chains, management teams, or businesses with multiple outlets that need a single place to view and manage their operations.
+- **Dashboard Analytics**: Visualize key metrics and trends
+- **Order Management**: Track and manage restaurant orders
+- **Restaurant Management**: Add and manage restaurant information
+- **Peak Hours Analysis**: Identify busy periods and optimize staffing
+- **Revenue Tracking**: Monitor financial performance
+- **Interactive Charts**: Data visualization using modern charting libraries
 
-System Architecture
-Frontend
+## Tech Stack
 
-Built with React + TypeScript (SPA): A modern, single-page app with a clean, component-based structure.
+### Frontend
+- React with TypeScript
+- Vite for build tooling
+- Tailwind CSS for styling
+- Shadcn UI components
+- React Query for data fetching
+- Interactive charts for data visualization
 
-Routing: Uses Wouter for fast, lightweight page navigation.
+### Backend
+- Node.js server
+- RESTful API endpoints
+- Drizzle ORM for database operations
+- TypeScript for type safety
 
-State Management: Powered by TanStack Query (React Query) for caching, background updates, and smooth data handling.
+## Project Structure
 
-UI Components: Built using shadcn/ui and Radix UI, ensuring accessibility, responsive layouts, and a professional look.
+```
+├── client/                 # Frontend React application
+│   ├── src/
+│   │   ├── components/    # UI components
+│   │   ├── hooks/        # Custom React hooks
+│   │   ├── lib/          # Utility functions
+│   │   ├── pages/        # Page components
+│   │   └── types/        # TypeScript type definitions
+├── server/                # Backend Node.js server
+│   ├── routes.ts         # API route definitions
+│   ├── db.ts             # Database configuration
+│   └── storage.ts        # Data storage logic
+└── shared/               # Shared types and utilities
+    └── schema.ts         # Database schema definitions
+```
 
-Styling: Managed with Tailwind CSS, supporting themes (dark/light mode) via CSS variables.
+## Getting Started
 
-Backend
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd Restaurant-Order-Trends
+```
 
-Express.js REST API: Provides structured endpoints for restaurants, orders, and analytics data.
+2. **Install dependencies**
+```bash
+# Install root dependencies
+npm install
 
-Route Organization: Clear, resource-based API structure with proper status codes.
+# Install client dependencies
+cd client
+npm install
 
-Error Handling: Centralized middleware for consistent error responses and easier debugging.
+# Install server dependencies
+cd ../server
+npm install
+```
 
-Developer Experience: Integrated with Vite for hot reloading and faster local development.
+3. **Start the development servers**
+```bash
+# Start the backend server
+cd server
+npm run dev
 
-Data Layer
+# In a new terminal, start the frontend
+cd client
+npm run dev
+```
 
-PostgreSQL + Drizzle ORM: Type-safe queries with schema-based TypeScript support.
+4. Open your browser and navigate to `http://localhost:5173`
 
-Connection Management: Uses Neon’s serverless PostgreSQL with pooling for scalability.
+## Available Scripts
 
-Schema Design: Normalized tables for restaurants and orders, with strong data integrity for financial tracking.
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run lint`: Run ESLint
+- `npm run type-check`: Run TypeScript type checking
 
-Migrations: Managed through Drizzle Kit for versioned, reliable database changes.
+## Contributing
 
-Key Dependencies
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Neon Database: Serverless PostgreSQL with scaling, pooling, and branching.
-
-Chart.js: For interactive graphs (line, bar, doughnut charts).
-
-React Hook Form + Zod: Form handling with validation for clean, error-free data.
-
-Date-fns: For time-based analytics and formatting.
-
-Radix UI Primitives: Accessible, keyboard- and screen reader–friendly components.
-
-Tailwind CSS: Utility-first styling for fast and consistent UI design.
-
-Highlights
-
-This architecture focuses on:
-
-Type safety across the stack
-
-Real-time data updates
-
-Mobile-friendly, responsive design
-
-Scalable and maintainable code for production
